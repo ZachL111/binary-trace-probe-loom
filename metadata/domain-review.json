@@ -1,0 +1,73 @@
+{
+  "repo": "binary-trace-probe-loom",
+  "language": "Scala",
+  "category": "Observability",
+  "goal": "Package a Scala local lab for probe analysis with append-only fixtures, checkpoint recovery checks, and documented operating limits.",
+  "review_model": {
+    "terms": [
+      "span volume",
+      "latency skew",
+      "signal loss",
+      "incident shape"
+    ],
+    "lanes": [
+      "ship",
+      "watch",
+      "hold"
+    ],
+    "score": "signal * 2 + slack + confidence - drag * 3",
+    "purpose": "surface the domain-specific cases that need the most careful review"
+  },
+  "cases": [
+    {
+      "name": "baseline",
+      "focus": "span volume",
+      "signal": 59,
+      "slack": 41,
+      "drag": 11,
+      "confidence": 48,
+      "score": 174,
+      "lane": "ship"
+    },
+    {
+      "name": "stress",
+      "focus": "latency skew",
+      "signal": 60,
+      "slack": 51,
+      "drag": 15,
+      "confidence": 58,
+      "score": 184,
+      "lane": "ship"
+    },
+    {
+      "name": "edge",
+      "focus": "signal loss",
+      "signal": 73,
+      "slack": 24,
+      "drag": 11,
+      "confidence": 73,
+      "score": 210,
+      "lane": "ship"
+    },
+    {
+      "name": "recovery",
+      "focus": "incident shape",
+      "signal": 72,
+      "slack": 53,
+      "drag": 26,
+      "confidence": 89,
+      "score": 208,
+      "lane": "ship"
+    },
+    {
+      "name": "stale",
+      "focus": "span volume",
+      "signal": 70,
+      "slack": 28,
+      "drag": 14,
+      "confidence": 81,
+      "score": 207,
+      "lane": "ship"
+    }
+  ]
+}
