@@ -1,0 +1,17 @@
+{
+  "repo": "binary-trace-probe-loom",
+  "thresholds": {
+    "signal": 3,
+    "slack": 2,
+    "confidence": 2,
+    "drag": 5,
+    "ship": 163,
+    "watch": 109
+  },
+  "terms": [
+    "span volume",
+    "latency skew",
+    "signal loss",
+    "incident shape"
+  ]
+}
